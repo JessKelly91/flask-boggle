@@ -1,0 +1,19 @@
+body{
+    background-color: blanchedalmond;
+}
+
+.board{
+    background-color:purple;
+    margin-bottom: 20px;
+    border-spacing: 10px;
+}
+
+.board tr{
+    background-color: white;
+}
+
+.board td{
+    height: 5em;
+    width: 5em;
+    text-align: center;
+}

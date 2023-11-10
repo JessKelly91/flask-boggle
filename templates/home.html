@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body_content %}
+    <!-- display board and word submission form -->
+    <table class="board">
+        {% for row in board %}
+            <tr>
+                {% for letter in row %}
+                    <td>{{letter}}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <form id="word-guess-form" action="/guess">
+        <input id="guessed-word" type="text" placeholder="Enter word here">
+        <input id="submit" type = "submit">
+    </form>
+
+    <div id="flash">
+        {% for msg in get_flashed_messages() %}
+            <p>{{msg}}</p>
+        {% endfor %}
+    </div>
+
+{% endblock %}
