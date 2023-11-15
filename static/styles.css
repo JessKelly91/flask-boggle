@@ -17,3 +17,7 @@ body{
     width: 5em;
     text-align: center;
 }
+
+#check-word-msg{
+    margin-bottom: 20px;
+}

@@ -1,6 +1,30 @@
 {% extends 'base.html' %}
 
 {% block body_content %}
+
+    <button id="start">Start</button>
+
+    <div class="score">
+        <span>Score:</span>
+        <!-- score to be updated by JS -->
+        <span id="score-int">0</span>
+    </div>
+
+    <div class="highscore">
+        <span>Highscore:</span>
+        <span id="highscore">0</span>
+    </div>
+
+    <div class="timer">
+        <span>Time Remaining:</span>
+        <!-- timer to be updated by JS -->
+        <span id="countdown">60 seconds</span>
+    </div>
+
+    <div id="check-word-msg">
+        <!-- msg from checking word guess to be added here by JS -->
+    </div>
+
     <!-- display board and word submission form -->
     <table class="board">
         {% for row in board %}
@@ -12,15 +36,10 @@
         {% endfor %}
     </table>
 
-    <form id="word-guess-form" action="/guess">
-        <input id="guessed-word" type="text" placeholder="Enter word here">
+    <!-- form to submit user word guesses -->
+    <form id="word-guess-form" method="POST">
+        <input id="guessed-word" name="guessed-word" type="text" placeholder="Enter word here">
         <input id="submit" type = "submit">
     </form>
-
-    <div id="flash">
-        {% for msg in get_flashed_messages() %}
-            <p>{{msg}}</p>
-        {% endfor %}
-    </div>
 
 {% endblock %}
